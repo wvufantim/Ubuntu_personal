@@ -1,0 +1,37 @@
+#!/bin/bash
+
+sudo ufw enable
+
+sudo apt update
+
+sudo apt full-upgrade -y
+
+sudo apt autoremove -y
+
+sudo apt autoclean
+
+sudo apt purge libreoffice*
+
+sudo snap refresh
+
+sudo snap remove firefox
+
+sudo snap remove thunderbird
+
+sudo snap refresh
+
+sudo snap install brave
+
+sudo snap install signal-desktop
+
+yes | sudo add-apt-repository ppa:flatpak/stable
+
+sudo apt install flatpak -Y
+
+sudo apt install gnome-software-plugin-flatpak -y
+
+flatpak remote-add --if-not-exists flathub https://dl.flathub.org/repo/flathub.flatpakrepo
+
+flatpak install flathub io.gitlab.librewolf-community -y
+
+echo "***PLEASE RESTART YOUR COMPUTER TO COMPLETE THIS PROCESS***"
